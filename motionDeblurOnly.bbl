@@ -1,0 +1,70 @@
+\begin{thebibliography}{1}
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\urlprefix}{URL }
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi:\discretionary{}{}{}#1}\else
+  \providecommand{\doi}{doi:\discretionary{}{}{}\begingroup
+  \urlstyle{rm}\Url}\fi
+\providecommand{\bibAnnoteFile}[1]{%
+  \IfFileExists{#1}{\begin{quotation}\noindent\textsc{Key:} #1\\
+  \textsc{Annotation:}\ \input{#1}\end{quotation}}{}}
+\providecommand{\bibAnnote}[2]{%
+  \begin{quotation}\noindent\textsc{Key:} #1\\
+  \textsc{Annotation:}\ #2\end{quotation}}
+\providecommand{\eprint}[2][]{\url{#2}}
+
+\bibitem{nayarDeblur}
+Nayar SK, Ben-Ezra M (2004) Motion-based motion deblurring.
+\newblock IEEE Transactions on Pattern Analysis and Machine Intelligence 26:
+  689-698.
+\bibAnnoteFile{nayarDeblur}
+
+\bibitem{CaiDeblurring}
+Li F, Yu J, Chai J (2008) A hybrid camera for motion deblurring and depth map
+  super-resolution.
+\newblock In: 2008 IEEE Conference on Computer Vision and Pattern Recognition.
+  pp. 1-8.
+\newblock \doi{10.1109/CVPR.2008.4587574}.
+\bibAnnoteFile{CaiDeblurring}
+
+\bibitem{raskar2006coded}
+Raskar R, Agrawal A, Tumblin J (2006) Coded exposure photography: motion
+  deblurring using fluttered shutter.
+\newblock ACM Transactions on Graphics (TOG) 25: 795--804.
+\bibAnnoteFile{raskar2006coded}
+
+\bibitem{fergus2006removing}
+Fergus R, Singh B, Hertzmann A, Roweis ST, Freeman WT (2006) Removing camera
+  shake from a single photograph.
+\newblock In: ACM Transactions on Graphics (TOG). ACM, volume~25, pp. 787--794.
+\bibAnnoteFile{fergus2006removing}
+
+\bibitem{Shan:2008:HMD:1360612.1360672}
+Shan Q, Jia J, Agarwala A (2008) High-quality motion deblurring from a single
+  image.
+\newblock ACM Trans Graph 27: 73:1--73:10.
+\bibAnnoteFile{Shan:2008:HMD:1360612.1360672}
+
+\bibitem{Cho:2009:FMD:1618452.1618491}
+Cho S, Lee S (2009) Fast motion deblurring.
+\newblock ACM Trans Graph 28: 145:1--145:8.
+\bibAnnoteFile{Cho:2009:FMD:1618452.1618491}
+
+\bibitem{levin2006blind}
+Levin A (2006) Blind motion deblurring using image statistics.
+\newblock In: Advances in Neural Information Processing Systems. pp. 841--848.
+\bibAnnoteFile{levin2006blind}
+
+\bibitem{caiWavelet}
+Cai JF, Ji H, Liu C, Shen Z (2012) Framelet-based blind motion deblurring from
+  a single image.
+\newblock IEEE Transactions on Image Processing 21: 562-572.
+\bibAnnoteFile{caiWavelet}
+
+\bibitem{Ma:15}
+Ma C, Liu Z, Tian L, Dai Q, Waller L (2015) Motion deblurring with temporally
+  coded illumination in an led array microscope.
+\newblock Opt Lett 40: 2281--2284.
+\bibAnnoteFile{Ma:15}
+
+\end{thebibliography}

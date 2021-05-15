@@ -1,0 +1,104 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\citation{nayarDeblur,CaiDeblurring}
+\citation{raskar2006coded}
+\citation{fergus2006removing,Shan:2008:HMD:1360612.1360672,Cho:2009:FMD:1618452.1618491,levin2006blind}
+\citation{caiWavelet}
+\@writefile{toc}{\contentsline {section}{\numberline {2.4}High-Throughput Imaging}{21}{section.2.4}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.5}Motion Deblur}{21}{section.2.5}}
+\newlabel{blurForwardModel}{{2.14}{21}{Motion Deblur}{equation.2.5.14}{}}
+\citation{raskar2006coded}
+\citation{raskar2006coded}
+\newlabel{eq:blurInverseModel}{{2.15}{22}{Motion Deblur}{equation.2.5.15}{}}
+\newlabel{condNum}{{2.16}{22}{Motion Deblur}{equation.2.5.16}{}}
+\citation{Ma:15}
+\citation{raskar2006coded}
+\newlabel{eq:deblurKernelProb}{{2.17}{23}{Motion Deblur}{equation.2.5.17}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.6}Phase Imaging with Motion Deblur}{23}{section.2.6}}
+\newlabel{forwardModelSingle}{{2.19}{23}{Phase Imaging with Motion Deblur}{equation.2.6.19}{}}
+\newlabel{WOTFre_2}{{2.20}{23}{Phase Imaging with Motion Deblur}{equation.2.6.20}{}}
+\newlabel{WOTFim_2}{{2.21}{23}{Phase Imaging with Motion Deblur}{equation.2.6.21}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.7}{\ignorespaces  Motion blur real-space and Fourier space representations. In the case of a static object, the object is filtered by the optical transfer function (OTF), assuming incoherent illumination. With motion blur, an additional convolution with a blurring function $B(\mathaccentV {vec}17E{r})$ causes attenuation in the frequency domain which acts as a cascaded linear filter on the object. In the case of coded blur, the transfer function is attenuated much less than in the conventional blur case. The colorbars are constant for real and fourier domain images respectively.}}{24}{figure.2.7}}
+\newlabel{fig:deblur}{{\M@TitleReference {2.7}{Motion Deblur}}{24}{Motion blur real-space and Fourier space representations. In the case of a static object, the object is filtered by the optical transfer function (OTF), assuming incoherent illumination. With motion blur, an additional convolution with a blurring function $B(\vec {r})$ causes attenuation in the frequency domain which acts as a cascaded linear filter on the object. In the case of coded blur, the transfer function is attenuated much less than in the conventional blur case. The colorbars are constant for real and fourier domain images respectively}{figure.2.7}{}}
+\citation{raskar2006coded}
+\citation{Ma:15}
+\citation{raskar2006coded}
+\citation{Ma:15}
+\newlabel{forwardModel}{{2.22}{25}{Phase Imaging with Motion Deblur}{equation.2.6.22}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.8}{\ignorespaces  Motion blurring kernels for 1D motion in the Fourier Domain. \textbf  {Left Column:} Unblurred absorption (top) and phase (bottom) transfer functions. \textbf  {$2^{nd}$ Column}: Middle: Fourier transform of constant (non-coded) blur kernel. The top and bottom spectra in this column are the product of the unblurred transfer function and this center spectrum. \textbf  {$3^{rd}$ Column}: Blurred transfer function spectra for temporal coding which does not consider WOTF structure. \textbf  {$4^{th}$ Column}: Blurred transfer function spectra for temporal coding which emphasizes low and high frequencies based on WOTF structure.}}{26}{figure.2.8}}
+\newlabel{fig:deblurKernels}{{\M@TitleReference {2.8}{Phase Imaging with Motion Deblur}}{26}{Motion blurring kernels for 1D motion in the Fourier Domain. \textbf {Left Column:} Unblurred absorption (top) and phase (bottom) transfer functions. \textbf {$2^{nd}$ Column}: Middle: Fourier transform of constant (non-coded) blur kernel. The top and bottom spectra in this column are the product of the unblurred transfer function and this center spectrum. \textbf {$3^{rd}$ Column}: Blurred transfer function spectra for temporal coding which does not consider WOTF structure. \textbf {$4^{th}$ Column}: Blurred transfer function spectra for temporal coding which emphasizes low and high frequencies based on WOTF structure}{figure.2.8}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.7}Validation}{27}{section.2.7}}
+\@writefile{toc}{\contentsline {subsection}{Simulation}{27}{section*.12}}
+\@writefile{toc}{\contentsline {subsection}{Experimental Results}{27}{section*.13}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.9}{\ignorespaces  Simulation results for phase retrieval from blurred images. \textbf  {Top Row}: Phase and amplitude retrieval of a stationary sample. This serves as our best-case reconstruction for the blurred images. \textbf  {Second Row}: Phase and amplitude retrieval of a blurred sample using constant illumination. This is the degenerate solution. \textbf  {Third Row}: Deblur using a coded blur kernel as in the previous methods. The result improves significantly over the constant illumination case, but is still missing features in phase. \textbf  {Fourth Row}: Deblur using our coded kernels}}{28}{figure.2.9}}
+\newlabel{fig:deblurSimulation}{{\M@TitleReference {2.9}{Phase Imaging with Motion Deblur}}{28}{Simulation results for phase retrieval from blurred images. \textbf {Top Row}: Phase and amplitude retrieval of a stationary sample. This serves as our best-case reconstruction for the blurred images. \textbf {Second Row}: Phase and amplitude retrieval of a blurred sample using constant illumination. This is the degenerate solution. \textbf {Third Row}: Deblur using a coded blur kernel as in the previous methods. The result improves significantly over the constant illumination case, but is still missing features in phase. \textbf {Fourth Row}: Deblur using our coded kernels}{figure.2.9}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.10}{\ignorespaces  Experimental setup for motion deblurring. The tri-color LED array provides fast illumination coding in time, angle, and color. The LED array can be programmed dynamically using a Teensy micro-controller and has a maximum update speed of approximately 250 Hz. The LED array is synchronized with the linear motion stage and camera in hardware to provide precise system synchronization.}}{29}{figure.2.10}}
+\newlabel{fig:deblurSystem}{{\M@TitleReference {2.10}{Experimental Results}}{29}{Experimental setup for motion deblurring. The tri-color LED array provides fast illumination coding in time, angle, and color. The LED array can be programmed dynamically using a Teensy micro-controller and has a maximum update speed of approximately 250 Hz. The LED array is synchronized with the linear motion stage and camera in hardware to provide precise system synchronization}{figure.2.10}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.11}{\ignorespaces  Experimental results for motion deblur of a moving sample (Fresnel Technologies 605 micro-lens array).}}{30}{figure.2.11}}
+\newlabel{fig:deblurResults}{{\M@TitleReference {2.11}{Experimental Results}}{30}{Experimental results for motion deblur of a moving sample (Fresnel Technologies 605 micro-lens array)}{figure.2.11}{}}
+\@setckpt{chap3}{
+\setcounter{page}{31}
+\setcounter{equation}{23}
+\setcounter{enumi}{0}
+\setcounter{enumii}{0}
+\setcounter{enumiii}{0}
+\setcounter{enumiv}{0}
+\setcounter{footnote}{0}
+\setcounter{mpfootnote}{0}
+\setcounter{@memmarkcntra}{-1}
+\setcounter{storedpagenumber}{1}
+\setcounter{book}{0}
+\setcounter{part}{0}
+\setcounter{chapter}{2}
+\setcounter{section}{7}
+\setcounter{subsection}{0}
+\setcounter{subsubsection}{0}
+\setcounter{paragraph}{0}
+\setcounter{subparagraph}{0}
+\setcounter{@ppsavesec}{0}
+\setcounter{@ppsaveapp}{0}
+\setcounter{vslineno}{0}
+\setcounter{poemline}{0}
+\setcounter{modulo@vs}{0}
+\setcounter{memfvsline}{0}
+\setcounter{verse}{0}
+\setcounter{chrsinstr}{0}
+\setcounter{poem}{0}
+\setcounter{newflo@tctr}{4}
+\setcounter{@contsubnum}{0}
+\setcounter{maxsecnumdepth}{1}
+\setcounter{sidefootnote}{0}
+\setcounter{pagenote}{0}
+\setcounter{pagenoteshadow}{0}
+\setcounter{memfbvline}{0}
+\setcounter{bvlinectr}{0}
+\setcounter{cp@cntr}{0}
+\setcounter{ism@mctr}{0}
+\setcounter{xsm@mctr}{0}
+\setcounter{csm@mctr}{0}
+\setcounter{ksm@mctr}{0}
+\setcounter{xksm@mctr}{0}
+\setcounter{cksm@mctr}{0}
+\setcounter{msm@mctr}{0}
+\setcounter{xmsm@mctr}{0}
+\setcounter{cmsm@mctr}{0}
+\setcounter{bsm@mctr}{0}
+\setcounter{workm@mctr}{0}
+\setcounter{sheetsequence}{40}
+\setcounter{lastsheet}{59}
+\setcounter{lastpage}{50}
+\setcounter{figure}{11}
+\setcounter{lofdepth}{1}
+\setcounter{table}{0}
+\setcounter{lotdepth}{1}
+\setcounter{parentequation}{0}
+\setcounter{Item}{0}
+\setcounter{Hfootnote}{0}
+\setcounter{memhycontfloat}{0}
+\setcounter{Hpagenote}{0}
+\setcounter{bookmark@seq@number}{14}
+\setcounter{linenumber}{1}
+\setcounter{LN@truepage}{39}
+\setcounter{theorem}{0}
+\setcounter{section@level}{2}
+}

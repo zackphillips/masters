@@ -1,0 +1,200 @@
+\chapter{Single-Shot Quantitative Phase Retrieval}
+
+\section{Quantitative Phase Imaging}
+Quantitative Phase Imaging (QPI) involves recovering the amplitude and phase, or complex field, of a sample. In contrast to \emph{qualitative} phase imaging methods, such as Zernike phase contrast (PhC)\cite{zernike1955discovered}) and Differential Interference Contrast (DIC)\cite{smithDIC}, \emph{quantitative} methods recover the phase delay caused by the sample, decoupled from absorption information. Modifications of PhC~\cite{yun2010system} and DIC~\cite{CuiYangTearney2011} can make these setups quantitative, at a cost of requiring multiple images. More commonly, QPI methods use interferometry with coherent illumination and a reference beam~\cite{Popescu:06,Wang:11,Bhaduri:12}, making them expensive and sensitive to misalignment and vibrations.
+
+Differential Phase Contrast (DPC)~\cite{Hamilton1984a,mehta2009quantitative,Tian14,tian2015quantitative} is a partially coherent QPI technique that requires multiple images. Each is captured using a different asymmetric half-circle source pattern, which shifts the sample's spectrum in Fourier space. Thus, a half circle source and its complement will cause the pupil function to crop opposite sides of the sample's spectrum. Since imaginary information is encoded in Fourier asymmetry, these images can be used to recover phase. Assuming a linearized model for a weakly scattering sample, the inverse problem becomes a single-step deconvolution process~\cite{mehta2009quantitative,tian2015quantitative}. DPC recovers both amplitude and phase with resolution up to the incoherent resolution limit ($2\times$ better than coherent methods). Practically, the illumination switching can be done quickly and at low cost with an LED array~\cite{Tian14,zijiMulti,tian2015quantitative}. At least two complementary source patterns are required, but generally 4 patterns (top, bottom, left, right half-circles) are used to avoid missing frequencies. The DPC method was recently extended to color multiplexing~\cite{lee2015color}, where the 4 source patterns were encoded into two images by using a color camera in combination with a color LED array. Similarly, color photometric stereo has been used for retrographic surface profiling of large objects using off-axis color illumination in reflection mode~\cite{johnson2009retrographic}.
+
+Amongst the wide array of existing QPI methods, several are single-shot techniques. Off-axis holography interferes the sample beam with a tilted reference beam, then recovers phase by Fourier filtering~\cite{Witte:12}. Parallel phase-shifting can spatially multiplex several holograms within a single exposure via an array of polarizers~\cite{2004singleshotPSDH}. And single-shot QPI add-ons based on amplitude gratings work with commercial microscopes, replacing the traditional camera module~\cite{phasics,bon2012method}. Another add-on option uses two cameras to capture defocused images which can then be used to solve the Transport of Intensity Equation (TIE)~\cite{allman2005optical}. Alternatively, if chromatic aberrations are large enough, they can enable single-shot color TIE~\cite{5714248} without any hardware changes. All of these methods require the some spatial or temporal coherence, limiting resolution, but provide camera-limited frame rates.
+
+\begin{figure}[tbh]
+\centering
+\includegraphics[width=\textwidth]{cdpc-Fig1.pdf}
+\caption{\label{fig:hardware}
+Single-shot color Differential Phase Contrast (cDPC) microscopy. a) Installation in Nikon TE300 microscope condenser turret. b) CAD model and image of fabricated cDPC insert.c) Optical schematic of a brightfield microscope with a cDPC color filter placed at the back focal plane of the condenser in K\"{o}hler configuration. d) Reconstruction: the captured color image is separated into its RGB components, which are then used to recover two unknowns (amplitude and phase) via a well-posed linear deconvolution. The sample is a micro-lens array (Fresnel Technologies 605). }
+\end{figure}
+
+\section{Color-Multiplexed Differential Phase Contrast (cDPC) }
+To improve temporal resolution of a DPC system without compromising spatial resolution a multiplexing configuration is necessary to make the problem well-posed. The proposed alternative method, color Differential Phase Contrast (cDPC), requires only a \emph{single} color image for multiplexing source patterns. In this method, the source is discretized into three color channels which are used to display three different half-circle source patterns. It is important to note that while the original DPC algorithm presented in \cite{tian2015quantitative} requires 4 images, the proposed method only requires 3, since the 4th source configuration can be synthesized by taking the sum of two images acquired with opposite half-circle illuminations (a synthetic brightfield image) and subtracting that of a 90 degree rotated half-circle source. In early prototypes the color source pattern pattern was implemented in an LED array microscope, which offers many imaging modalities in one platform~\cite{Tian14,zijiMulti,tian2015quantitative,Ma:15,Phillips15, Zheng2011, Zheng2013}. However, the proposed configuration does not require a dynamic source, making it possible to use a static multi-color filter placed in the condenser back focal plane, assuming K\"{o}hler illumination. Both configurations simplify hardware and reduce costs significantly as compared to phase contrast or DIC, while providing quantitative phase, which is more general and can be used to synthesize both of the aforementioned methods digitally~\cite{JMI:JMI1027}.
+
+\subsection{Hardware Design}
+As in conventional DPC, this method requires measurements of the sample illuminated by known asymmetric sources. In cDPC, however, we make use of the microscope's existing condenser unit, which has a turret commonly used for phase contrast inserts or DIC prisms. This intermediate plane can usually be accessed easily by removing the mechanical inserts. Taking advantage of this configuration, a simple 3D printed color filter was designed and fabricated that can be placed in the condenser turret of a Nikon TE300 microscope (Figure~\ref{fig:hardware}a).
+
+The filter prototype consists of Polyethylene Terephthalate (PET) color filters (Lee Filter, Inc.) laser cut to size and installed into a 3D printed insert designed to fit our microscope. Narrow bandwidth illumination filters (e.g. multi-layer coated glass) would separate colors better, but suffer from low light throughput and high cost. Therefore, inexpensive and easy-to-cut PET film filters were used; the resulting cross-talk between color channels will be accounted for in post-processing, described below.
+
+The total cost of raw materials is approximately $\$30$ and filters were produced quickly with a 3D printer and laser cutter. One filter is shown in Figure~\ref{fig:hardware}b; it was installed in the condenser turret of an inverted microscope (Figure~\ref{fig:hardware}a), replacing one of the removable phase contrast (Ph1, Ph2 or Ph3) inserts.
+\subsection{Calibration}
+\label{Calibration}
+
+Ideally, the color filters would provide perfect separation of the three source patterns into the three color channels. In reality, both the illumination and camera color channels have cross-talk between the desired wavelengths. To account for this, system calibration is separated into two separate steps: detection-side and illumination-side.
+
+Illumination-side calibration corrects for the relative spectral transmittance of each of the source color filters. The illumination pattern simultaneously encodes three half-circle sources, one each for the RGB color channels. Red and green are opposite half-circles, and blue is rotated by 90 degrees relative to the others. Where the blue and green patterns overlap, a cyan filter (blue + green) was used. Where the blue and red patterns overlap, a purple filter (blue + red) was used. Hence, the final filter design actually contains four quadrants having red, green, cyan and purple filters (see Fig.~\ref{fig:transferfunctions}).
+
+\begin{figure}[tbh]
+\centering
+\includegraphics[width=0.8\textwidth]{cdpc-Fig2.pdf}
+\caption{\label{fig:transferfunctions}
+Transfer functions for amplitude and phase contrast in each cDPC color channel. Left: Spectral contribution of each illumination filter as captured by the camera's Bayer pattern. The following columns show the components of the amplitude and phase transfer functions in the spatial frequency domain and the source represented in each image.  Bottom row: sum of each column, representing the calibrated and scaled source and the total coverage of amplitude and phase transfer functions, respectively. }
+\end{figure}
+
+When filtered by the sensor Bayer pattern, the filter spectrum bases are not orthogonal. This can be seen in the spectra of each PET film after capture with a color camera (left column of Fig.~\ref{fig:transferfunctions}). The result is an undesirable loss of asymmetry in the source that reduces phase SNR. However, it is possible to account for the asymmetry during reconstruction by modeling the source patterns as in Fig.~\ref{fig:transferfunctions}.
+
+Detection-side calibration accounts for spectral cross-talk of the camera color channels. Standard RGB Bayer filters do not provide perfect discrimination between RGB wavelengths, but coupling artifacts can be removed by calibration. Given the pixel values from the raw color image with an RGBG Bayer filter ($I_r$, $I_{g1}$, $I_{g2}$, $I_b$), it is possible to solve for the decoupled color image ($I_R$, $I_{G}$, $I_{B}$) that would be obtained if the sample were illuminated with a single color, according to the following equation,
+
+\begin{equation}
+\label{eq:couplingmatrix}
+\begin{bmatrix}
+I_{r} \\
+I_{g1}\\
+I_{g2}\\
+I_{b}
+\end{bmatrix}
+ =
+ C
+ \begin{bmatrix}
+I_{R} \\
+I_{G}\\
+I_{B}
+\end{bmatrix}.
+\end{equation}
+
+\noindent  The matrix $C$ is a 4$\times$3 calibration matrix describing the coupling between each color channel. It is generated by filtering the broadband source with each filter independently, then measuring the relative red ($I_R$), green ($I_G$) and blue ($I_B$) read-outs to populate the corresponding column vectors of the $C$ matrix. The ratio between the intensities of each flat-field image at each detection channel provides a linear weighting of the contribution of each source to the color measurement. Once $C$ has been measured once, it can be used to pre-process all later measurements by solving Eq.~\eqref{eq:couplingmatrix}. This step is important for reducing artifacts in the phase results.
+
+Another important step for cDPC is to account for wavelength-dependent changes in phase and spatial frequency. DPC recovers absorption ($\mu$) and phase ($\phi$) information from intensity measurements. These quantities are defined as:
+
+\begin{equation}
+\label{eq:absorption_phase}
+\mu = \frac{2\pi}{\lambda_0} \alpha d,\ \phi = \frac{2\pi}{\lambda_0} n d,
+\end{equation}
+
+\noindent where $\lambda_0$ is a reference wavelength, $d$ is the thickness of the sample, $n$ represents refractive index and $\alpha$ indicates absorption coefficient. Absorption and phase transfer functions are determined by illumination numerical aperture (NA), objective NA and illumination wavelength~\cite{tian2015quantitative}. In the proposed color-multiplexed DPC method, the transfer functions must also consider the change in wavelength of each color channel. Phase ($\phi$) depends on which wavelength is used. By assuming no dispersion in the sample, it is possible to use Eq.~\eqref{eq:absorption_phase} to synthesize phase for any wavelength by simply multiplying the optical path length ($nd$) by the wave number ($\frac{2\pi}{\lambda_0}$) of a desired reference wavelength $\lambda_0$.
+
+\subsection{Forward model}
+\label{sec:forward}
+Here a linearized forward model is formed by deriving the Weak-Object Transfer Functions (WOTFs) for both amplitude and phase ~\cite{Claus2015, tian2015quantitative, Hamilton1984a}. The WOTF formulation linearizes phase recovery by neglecting the nonlinear scatter-scatter term; this is a good approximation when the object is weak (having low absolute phase or amplitude). Each image is modeled as the sum of convolutions between color-dependent point spread functions (PSFs) for intensity, and physical quantities - absorption and phase ($\mu$, $\phi$),
+
+\begin{equation}
+	I(\vec{r},\lambda) = I_{0}(\lambda) +H_{\mu}(\vec{r},\lambda) * \mu(\vec{r}) + \mathrm{i}\cdot H_{\phi}(\vec{r},\lambda) * \phi(\vec{r}),
+	\label{eq:two}
+\end{equation}
+
+\noindent where $\vec{r}$ represents 2D real-space coordinates, $I$ is the color intensity measurement, $I_0$ is the background signal, $*$ denotes convolution, $H_{\mu}$ and $H_{\phi}$ are PSFs for absorption and phase, respectively. Taking the 2D Fourier transform of both sides of Eq.~\ref{eq:two}, we obtain:
+
+\begin{equation}
+	\tilde{I}(\vec{f},\lambda) = \tilde{I}_0(\lambda)\cdot\delta(\vec{f})+ \tilde{H}_{\mu}(\vec{f},\lambda)  \cdot \tilde{\mu}(\vec{f})+ \mathrm{i}\cdot\tilde{H}_{\phi}(\vec{f},\lambda)  \cdot \tilde{\phi}(\vec{f}),
+\end{equation}
+
+\noindent where $\vec{f}$ is 2D spatial frequency coordinates, $\tilde{\cdot}$ denotes Fourier transform,  $\tilde{H}_{\mu}$ and $\tilde{H}_{\phi}$ are the wavelength-dependent transfer functions for absorption and phase, respectively. Given a known source ($S$), and pupil function ($P$) which is modeled as a circle with radius set by the objective NA and wavelength $\lambda$, the transfer functions are~\cite{Claus2015,tian2015quantitative}:
+
+\begin{equation}\label{WOTFre}
+\tilde{H}_{\mu}(\vec{f},\lambda) = \left[  P(\vec{f},\lambda) \star (P(\vec{f},\lambda)\cdot S(-\vec{f},\lambda))+ (P(\vec{f},\lambda) \cdot S(-\vec{f},\lambda)) \star P(\vec{f},\lambda)\right]
+\end{equation}
+
+\begin{equation}\label{WOTFim}
+\tilde{H}_{\phi}(\vec{f},\lambda) = \frac{\lambda_0}{\lambda}\cdot\left[ P(\vec{f},\lambda) \star (P(\vec{f},\lambda)\cdot S(-\vec{f},\lambda))- (P(\vec{f},\lambda) \cdot S(-\vec{f},\lambda)) \star P(\vec{f},\lambda) \right],
+\end{equation}
+
+\noindent where $\star$ denotes cross-correlation. Note that because spatial frequency is a function of wavelength, the source shape $S(\lambda)$ and pupil function $P(\lambda)$ also depend on wavelength. Specifically, the diameters of the source and transfer functions in Fourier space are inversely proportional to the wavelength of the color channel. Hence, blue illumination provides larger Fourier space coverage and better resolution than red. The proposed modified forward model accounts for these differences in the color channel's transfer function. Figure~\ref{fig:transferfunctions} shows the absorption and phase transfer functions for $\lambda = 450 nm$, $\lambda = 546 nm$ and $\lambda = 670 nm$, with top-right, bottom-right and top-left half-circle sources, respectively.
+
+Examining Fig.~\ref{fig:transferfunctions}, it is clear that the absorption transfer functions for each color channel are symmetric low-pass filters. The phase transfer functions, on the other hand, are asymmetric band-pass-like filters with a line of missing frequencies along the axis of asymmetry. By rotating the blue half-circle by 90 degrees relative to the red and green ones, the missing line is filled. The overall amplitude and phase transfer functions for cDPC are shown in the last row of Fig.~\ref{fig:transferfunctions}, calculated by summing the absolute values of each color transfer function. As with previous DPC implementations, absorption information loses contrast at high spatial frequencies. Phase has a similar drop-off at high frequencies, but also loses contrast in the low spatial frequency regions. Hence, SNR will be important for accurately recovering low-frequency phase information. The maximum spatial frequency range captured is 2$\times$ the NA of the blue color channel. However, the final resolution using cDPC is set by the diffraction limit of green light, since total frequency coverage is set by the maximum spatial frequency which is measured by \textit{two or more} color channels. This comes as an implication of trying to recover two unknowns, amplitude and phase, thus requiring at least two measurements.
+
+\subsection{Inverse problem}
+Using the forward model developed in Section~\ref{sec:forward}, the cDPC inverse problem aims to minimize the difference between the measured color image and that which would be measured, given the estimate of the sample's amplitude and phase:
+
+\begin{equation}\label{eq:objectivefunction}
+\begin{split}
+\min_{\mu,\phi} \sum_{m=1}^{3}\frac{1}{2} \parallel\tilde{I}'(\lambda_m) - \tilde{H}_{\mu}(\lambda_m)\cdot \tilde{\mu} - \mathrm{i}\cdot\tilde{H}_{\phi}(\lambda_m)\cdot \tilde{\phi} \parallel_2^2 + R(\mu,\phi),
+\end{split}
+\end{equation}
+
+\noindent where $\tilde{I}'$ is the spatial frequency spectrum of the background-subtracted intensity, $m$ is the wavelength index and $R(\mu,\phi)$ is a regularization term (typically on the order of $10^{-3}$). This problem is linear and can be solved with a one-step least-square solution (e.g. Wiener deconvolution~\cite{HayesDSP}) or by an iterative algorithm (e.g. gradient descent). The ideal choice of regularizer $R(\mu,\phi)$ depends on the sample and noise. Basic $\ell_2$ regularization should be tuned to suppress noise amplification in spatial frequencies that are measured with low-contrast, without destroying sample information at those frequencies. Alternatively, if the sample is sparse (only a few non-zero values), one can use an $\ell_1$ regularizer~\cite{2002_l1_sparcity}. Other types of \textit{a priori} information may be incorporated by appropriate regularization. In the experiments presented here no assumptions on the sample structure were made; However, $\ell_2$ regularization is used to constrain the total energy of the signal and make the problem well-posed. Equation~\eqref{eq:objectivefunction} thus becomes,
+
+\begin{equation}\label{eq:objectivefunction2}
+\begin{split}
+\min_{\mu,\phi} \sum_{m=1}^{3} \frac{1}{2}  \parallel\tilde{I}'(\lambda_m) - \tilde{H}_{\mu}(\lambda_m)\cdot \tilde{\mu} - \mathrm{i}\cdot\tilde{H}_{\phi}(\lambda_m)\cdot \tilde{\phi} \parallel_2^2 + \gamma_\mu\cdot \parallel \mu\parallel^2_2 + \gamma_\phi\cdot \parallel \phi\parallel^2_2,
+\end{split}
+\end{equation}
+
+\noindent which remains differentiable and allows us to find the global minimum solution for absorption and phase with a single matrix inversion step. The final reconstruction for the absorption and phase maps can therefore be written mathematically as:
+
+\begin{equation} \label{eq:Ha}
+\mu = F^{-1}\left\{\frac{\left(\sum\limits_{m}|\tilde{H}_{\phi,m}|^2+\gamma_{\phi}\right)\cdot\sum\limits_{m}\left(\tilde{H}^*_{\mu,m}\cdot\tilde{I}'_{m}\right)-\sum\limits_{m} \left ( \tilde{H}^*_{\mu,m}\cdot\tilde{H}_{\phi,m} \right ) \cdot\sum\limits_{m}\left(\tilde{H}^*_{\phi,m}\cdot\tilde{I}'_{m}\right)}{\left(\sum\limits_{m}|\tilde{H}_{\mu,m}|^2+\gamma_{\mu}\right)\cdot\left(\sum\limits_{m}|\tilde{H}_{\phi,m}|^2+\gamma_{\phi}\right) - \sum\limits_{m}\left(\tilde{H}_{\mu,m}\cdot\tilde{H}^*_{\phi,m}\right)\cdot\sum\limits_{m}\left(\tilde{H}^*_{\mu,m}\cdot\tilde{H}_{\phi,m}\right)} \right\}
+\end{equation}
+
+\begin{equation} \label{eq:Hp}
+\phi = F^{-1}\left\{\frac{-\mathrm{i}\cdot\left[\left(\sum\limits_{m}|\tilde{H}_{\mu,m}|^2+\gamma_{\mu}\right)\cdot\sum\limits_{m}\left(\tilde{H}^*_{\phi,m}\cdot\tilde{I}'_{m}\right)-\sum\limits_{m}\left(\tilde{H}_{\mu,m}\cdot\tilde{H}^*_{\phi,m}\right)\cdot\sum\limits_{m}\left(\tilde{H}^*_{\mu,m}\cdot\tilde{I}'_{m}\right)\right]}{\left(\sum\limits_{m}|\tilde{H}_{\mu,m}|^2+\gamma_{\mu}\right)\cdot\left(\sum\limits_{m}|\tilde{H}_{\phi,m}|^2+\gamma_{\phi}\right)-\sum\limits_{m}\left(\tilde{H}_{\mu,m}\cdot\tilde{H}^*_{\phi,m}\right)\cdot\sum\limits_{m} \left( \tilde{H}^*_{\mu,m}\cdot\tilde{H}_{\phi,m} \right )} \right\},
+\end{equation}
+
+\noindent where $\cdot$ represents point-wise matrix multiplication, $\gamma_\mu$ and $\gamma_\phi$ are regularization coefficients of absorption and phase, respectively, and $F^{-1}$ denotes the inverse DFT operation. To compute amplitude ($A$) from absorption, the relation $A = e^{\mu}$, is used, which is similar to the reconstruction method used in~\cite{tian2015quantitative} but does not assume a pure phase object, leading to additional terms in Eq.~\ref{eq:Hp}.
+
+\begin{figure}[bth]
+\centering
+\includegraphics[width=\textwidth]{cdpc-Fig3.pdf}
+\caption{\label{fig:spatialRes}
+Experimental comparison of single-shot cDPC with monochromatic DPC and through-focus phase retrieval methods. (Left) Source patterns. (Middle) Raw camera measurements. (Right) Recovered optical field. DPC methods (partially coherent) were acquired using a 20$\times$ 0.4 NA objective lens, while through-focus images (spatially coherent) were captured using 60$\times$ 0.8 NA, in order to ensure equal resolution in all cases.}
+\end{figure}
+
+\clearpage
+
+\section{Validation}
+
+To experimentally validate the proposed cDPC method, results were compared with two established QPI methods: monochromatic DPC and through-focus phase retrieval (Fig.~\ref{fig:spatialRes}). For fair comparison, all are implemented on the same Nikon TE300 microscope using illumination generated by an RGB LED array (Adafruit). Each cDPC experiment uses a discretized version of the cDPC color filter design displayed on the LED array. Monochromatic DPC uses 4 images captured with each of 4 asymmetric source patterns~\cite{zijiMulti}. Through-focus phase imaging uses only the central green LED (for temporal and spatial coherence) while capturing 14 images at different focus depths; phase is then recovered by a nonlinear optimization phase retrieval method~\cite{JingsanSourceRecovery2016}.
+
+Because of the coherent illumination, through-focus phase imaging has 2$\times$ worse resolution than DPC methods. Thus, a 20$\times$ 0.4 NA objective lens was used for DPC methods, but switched to a 60$\times$ 0.8 NA objective for through-focus phase, in order keep resolution equal for all three. Spatial resolution is quantified using a spoke-pattern phase target~\cite{standardphaseresolution2016}.
+
+As can be seen in Fig.~\ref{fig:spatialRes}, the RGB color channel images have similar contrast to the left, right and top images of the monochromatic DPC, as expected. The phase results are also similar, with equivalent spatial resolution. Because the cDPC image is captured in one shot with color filters, it has lower SNR than monochromatic DPC and deviates in its low-frequency fluctuations, which have weaker transfer function values. Overall, however, single-shot cDPC performs comparably to multi-shot DPC.
+
+Next, the LED array was removed and replaced with the existing illumination pathway. For illumination, a broadband arc lamp light source was used. Alternatively, a high-power blue-phosphor static LED source could be used. The color filter insert shown in Fig.~\ref{fig:hardware}b was then installed into the condenser turret. Figure~\ref{fig:mosaic} shows amplitude and phase reconstructions from the proposed cDPC method with objectives of various magnification. The cDPC method is compatible with any standard objective having $ NA_{objective}\leq NA_{condenser}$. If an objective with larger NA than the condenser NA is used, the low frequencies of phase will not be transmitted during image formation (see the phase transfer function in Fig. \ref{fig:transferfunctions}), since phase contrast comes primarily from high-angle illumination. The spatial coherence factor $\sigma$ is often defined as:
+
+\begin{equation}
+\sigma = \frac{NA_{condenser}}{NA_{objective}}.
+\end{equation}
+
+\noindent In other words, $\sigma < 1$ will result in reduced phase contrast as compared to the $\sigma \geq 1$ case. The Nikon TE300 microscope used in this study was configured with a 0.53 NA condenser lens. Imaging with a higher objective NA would require high-NA illumination (e.g. by using a domed LED array~\cite{Phillips15}). Temporal coherence is set by the bandwidth of the color filters, since these have narrower bandwidth than the camera filters. The full-width-half-maximum (FWHM) bandwidth for the filters used in this study was approximately 50nm, which is similar to the emission spectrum of the LED array used previously~\cite{tian2015quantitative}.
+
+\begin{figure}[ph]
+\centering
+\includegraphics[width=1\textwidth]{cdpc-Fig4.pdf}
+\caption{\label{fig:mosaic}
+Phase and amplitude reconstructions for various samples and magnifications. (First column) Micro-lens array, 4x 0.1 NA. (Second column) Wild-type c. elegans, 10x 0.25 NA. (Third column) HEK 293T cells, 20$\times$ 0.4 NA). (Fourth column) MCF7 cells, 20$\times$ 0.4 NA.}
+\end{figure}
+
+\clearpage
+
+
+\subsection{Temporal Resolution}
+Since cDPC is single-shot, temporal resolution is set by the camera's frame rate, giving a factor of 4 improvement over conventional DPC. Single-shot methods reduce artifacts due to motion blur and image registration. This can be seen in Fig.~\ref{fig:temporalRes}, where the performance cDPC and conventional DPC are compared when imaging a live c. elegans culture. Motion blur is significantly reduced with cDPC, since the sample changes rapidly between frames, even at 12.5 frames per second.
+
+\begin{figure}[tbh]
+\centering
+\includegraphics[width=\textwidth]{cdpc-Fig5.pdf}
+\caption{\label{fig:temporalRes}
+Experimental demonstration of motion blur reduction with cDPC vs. conventional DPC. The cDPC method results in significantly reduced motion blur artifacts due to its single-shot acquisition.}
+\end{figure}
+
+\subsection{Synthesized PhC and DIC Images}
+
+\begin{figure}[tbh]
+\centering
+\includegraphics[width=\textwidth]{cdpc-Fig6.pdf}
+\caption{\label{fig:synthDIC_PC}
+Comparison of standard DIC and PhC images to their synthesized counterparts from cDPC. Ground truth DIC images were acquired using a 20x 0.75 NA objective and phase contrast images using a 20x 0.4 NA PhC objective. cDPC images were acquired using a 20x 0.4 NA objective and the filter insert.}\end{figure}
+
+Differential Interference Contrast (DIC) and conventional Phase Contrast (PhC) microscopy are examples of the widespread adoption of phase imaging methods in medicine and biomedical research. Though both methods have gained widespread adoption, optical components required for their implementation remain expensive, and alignment by an experienced user is required for acceptable performance. Both DIC and phase contrast can be described by forward models which produce a qualitative mixture of amplitude and phase images~\cite{zernike1942phase, smithDIC}. Since the forward models of these systems are well known, quantitative phase imaging methods can be used to form these images digitally, mimicking the physical optical system through numerical simulation. Synthesized images from cDPC, as well as ground truth DIC and PhC images, are shown in Figure~\ref{fig:synthDIC_PC} to be comparable.
+
+Synthesizing DIC and PhC is of particular use for clinicians and researchers who have been trained to make diagnoses or decisions based on these images. While all QPI methods can be used to synthesize these images, the cDPC method is particularly well-suited since it is single-shot, allowing for real-time digital synthesis. In addition, cDPC is much cheaper to implement than either DIC or PhC, since it requires only the addition of an inexpensive color filter insert and no specialized objectives. In contrast, DIC prisms and phase contrast objectives (specific to a given NA) can drive up the cost of a microscope significantly.
+
+\subsection{Stained and Dispersive Samples}
+The cDPC method uses color multiplexing to recover complex-field, making an inherent assumption that the sample is both non-dispersive and colorless. Non-dispersive means that the refractive index does not change appreciably with wavelength:
+
+\begin{equation} \label{Eq:nonDispersive}
+\phi(n(\lambda),d,\lambda) \approx \phi(n_0,d,\lambda).
+\end{equation}
+
+\noindent This assumption implies that the optical path length ($OPL = nd$) will remain constant for all measurements. The relative phase delay will always vary with $\lambda$ (Eq. \ref{eq:absorption_phase}), but this is accounted for in the cDPC algorithm by scaling the transfer functions based on the relative wavelength of each color channel. Unless the dispersion curve is known and the material is assumed to be uniform, one cannot account for dispersive effects in the sample using the proposed algorithm. However, in practice these effects do not corrupt our phase reconstructions results significantly due to relatively small dispersive effects of water across optical wavelengths.
+
+The second assumption is that the sample is colorless, meaning that the absorption does not have chromatic dependence:
+\begin{equation} \label{outEq:monochrome}
+\mu(\lambda) \approx \mu_0.
+\end{equation}
+\noindent This is generally valid for unstained biological samples, which are transparent. Color variations due to filter transmission coefficients at different wavelengths are present, but can be removed by the calibration procedure described in Section 1.2. Color-dependent absorption, such as that created by stained samples, cannot be recovered and will cause errors in the phase result. In practice, these assumptions limit the applicability of the cDPC method to unstained uncolored samples. However, quantitative phase reveals the mechanical structure of the microenvironment with high contrast, which may eliminate the need for staining in many applications.

@@ -1,0 +1,447 @@
+\begin{thebibliography}{10}
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\urlprefix}{URL }
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi:\discretionary{}{}{}#1}\else
+  \providecommand{\doi}{doi:\discretionary{}{}{}\begingroup
+  \urlstyle{rm}\Url}\fi
+\providecommand{\bibAnnoteFile}[1]{%
+  \IfFileExists{#1}{\begin{quotation}\noindent\textsc{Key:} #1\\
+  \textsc{Annotation:}\ \input{#1}\end{quotation}}{}}
+\providecommand{\bibAnnote}[2]{%
+  \begin{quotation}\noindent\textsc{Key:} #1\\
+  \textsc{Annotation:}\ #2\end{quotation}}
+\providecommand{\eprint}[2][]{\url{#2}}
+
+\bibitem{natureMilestones}
+ (2009).
+\newblock Milestones in light microscopy.
+\newblock
+  \urlprefix\url{http://www.nature.com/milestones/milelight/pdf/milelight_all.pdf}.
+\bibAnnoteFile{natureMilestones}
+
+\bibitem{hookeMicrographica}
+Hooke R (1665) Micrographia: or, Some physiological descriptions of minute
+  bodies made by magnifying glasses.
+\newblock London: J. Martyn and J. Allestry.
+\bibAnnoteFile{hookeMicrographica}
+
+\bibitem{gustafsson2000surpassing}
+Gustafsson MG (2000) Surpassing the lateral resolution limit by a factor of two
+  using structured illumination microscopy.
+\newblock Journal of microscopy 198: 82--87.
+\bibAnnoteFile{gustafsson2000surpassing}
+
+\bibitem{Zheng2013}
+Zheng G, Horstmeyer R, Yang C (2013) Wide-field, high-resolution {Fourier}
+  {P}tychographic microscopy.
+\newblock Nature Photonics 7: 739--745.
+\bibAnnoteFile{Zheng2013}
+
+\bibitem{smithDIC}
+Smith (1955) Microscopic interferometry.
+\newblock Research 8: 385-395.
+\bibAnnoteFile{smithDIC}
+
+\bibitem{zernike1955discovered}
+Zernike F (1955) How i discovered phase contrast.
+\newblock Science 121: 345.
+\bibAnnoteFile{zernike1955discovered}
+
+\bibitem{Dowski:95}
+Dowski ER, Cathey WT (1995) Extended depth of field through wave-front coding.
+\newblock Appl Opt 34: 1859--1866.
+\bibAnnoteFile{Dowski:95}
+
+\bibitem{yun2010system}
+Yun W, Feser M, Hornberger B (2010).
+\newblock System and method for quantitative reconstruction of zernike
+  phase-contrast images.
+\newblock \urlprefix\url{http://www.google.com/patents/US7787588}.
+\newblock US Patent 7,787,588.
+\bibAnnoteFile{yun2010system}
+
+\bibitem{CuiYangTearney2011}
+Cui X, Yang C, Tearney G (2011).
+\newblock Quantitative differential interference contrast (dic) microscopy and
+  photography based on wavefront sensors.
+\newblock \urlprefix\url{http://www.google.com/patents/US8039776}.
+\newblock US Patent 8,039,776.
+\bibAnnoteFile{CuiYangTearney2011}
+
+\bibitem{Popescu:06}
+Popescu G, Ikeda T, Dasari RR, Feld MS (2006) Diffraction phase microscopy for
+  quantifying cell structure and dynamics.
+\newblock Optics Letters 31: 775--777.
+\bibAnnoteFile{Popescu:06}
+
+\bibitem{Wang:11}
+Wang Z, Millet L, Mir M, Ding H, Unarunotai S, et~al. (2011) Spatial light
+  interference microscopy (slim).
+\newblock Optics Express 19: 1016--1026.
+\bibAnnoteFile{Wang:11}
+
+\bibitem{Bhaduri:12}
+Bhaduri B, Pham H, Mir M, Popescu G (2012) Diffraction phase microscopy with
+  white light.
+\newblock Optics Letters 37: 1094--1096.
+\bibAnnoteFile{Bhaduri:12}
+
+\bibitem{Hamilton1984a}
+Hamilton D, Sheppard C (1984) Differential phase contrast in scanning optical
+  microscopy.
+\newblock Journal of Microscopy 133: 27--39.
+\bibAnnoteFile{Hamilton1984a}
+
+\bibitem{mehta2009quantitative}
+Mehta SB, Sheppard CJ (2009) Quantitative phase-gradient imaging at high
+  resolution with asymmetric illumination-based differential phase contrast.
+\newblock Optics {L}etters 34: 1924--1926.
+\bibAnnoteFile{mehta2009quantitative}
+
+\bibitem{Tian14}
+Tian L, Wang J, Waller L (2014) {3D} differential phase-contrast microscopy
+  with computational illumination using an {LED} array.
+\newblock Optics Letters 39: 1326--1329.
+\bibAnnoteFile{Tian14}
+
+\bibitem{tian2015quantitative}
+Tian L, Waller L (2015) Quantitative differential phase contrast imaging in an
+  led array microscope.
+\newblock Optics express 23: 11394--11403.
+\bibAnnoteFile{tian2015quantitative}
+
+\bibitem{zijiMulti}
+Liu Z, Tian L, Liu S, Waller L (2014) Real-time brightfield, darkfield, and
+  phase contrast imaging in a light-emitting diode array microscope.
+\newblock Journal of {B}iomedical {O}ptics 19: 106002.
+\bibAnnoteFile{zijiMulti}
+
+\bibitem{lee2015color}
+Lee D, Ryu S, Kim U, Jung D, Joo C (2015) Color-coded led microscopy for
+  multi-contrast and quantitative phase-gradient imaging.
+\newblock Biomedical optics express 6: 4912--4922.
+\bibAnnoteFile{lee2015color}
+
+\bibitem{johnson2009retrographic}
+Johnson MK, Adelson EH (2009) Retrographic sensing for the measurement of
+  surface texture and shape.
+\newblock In: Computer Vision and Pattern Recognition, 2009. CVPR 2009. IEEE
+  Conference on. IEEE, pp. 1070--1077.
+\bibAnnoteFile{johnson2009retrographic}
+
+\bibitem{Witte:12}
+Witte S, Plau\c{s}ka A, Ridder MC, van Berge L, Mansvelder HD, et~al. (2012)
+  Short-coherence off-axis holographic phase microscopy of live cell dynamics.
+\newblock Biomed Opt Express 3: 2184--2189.
+\bibAnnoteFile{Witte:12}
+
+\bibitem{2004singleshotPSDH}
+Awatsuji Y, Sasada M, Kubota T (2004) Parallel quasi-phase-shifting digital
+  holography.
+\newblock Appl Phys Lett 85: 1069--1071.
+\bibAnnoteFile{2004singleshotPSDH}
+
+\bibitem{phasics}
+SA P (2009).
+\newblock Quantitative phase microscopy.
+\newblock \urlprefix\url{http://www.phasicscorp.com}.
+\bibAnnoteFile{phasics}
+
+\bibitem{bon2012method}
+Bon P, Wattellier B, Monneret S, Giovanini H, Maire G (2012).
+\newblock Method and system for structural analysis of an object by measuring
+  the wave front thereof.
+\newblock \urlprefix\url{https://www.google.com/patents/US20120274945}.
+\newblock US Patent App. 13/500,385.
+\bibAnnoteFile{bon2012method}
+
+\bibitem{allman2005optical}
+Allman B, Nugent K, Porter C (2005).
+\newblock An optical system for producing differently focused images.
+\newblock \urlprefix\url{https://www.google.com/patents/WO2005085936A1?cl=en}.
+\newblock WO Patent App. PCT/AU2005/000,204.
+\bibAnnoteFile{allman2005optical}
+
+\bibitem{5714248}
+Gross D (2011) Recovering low-rank matrices from few coefficients in any basis.
+\newblock IEEE Trans Inf Theory 57: 1548--1566.
+\bibAnnoteFile{5714248}
+
+\bibitem{Ma:15}
+Ma C, Liu Z, Tian L, Dai Q, Waller L (2015) Motion deblurring with temporally
+  coded illumination in an led array microscope.
+\newblock Opt Lett 40: 2281--2284.
+\bibAnnoteFile{Ma:15}
+
+\bibitem{Phillips15}
+Phillips ZF, D'Ambrosio MV, Tian L, Rulison JJ, Patel HS, et~al. (2015)
+  Multi-contrast imaging and digital refocusing on a mobile microscope with a
+  domed led array.
+\newblock PLoS ONE 10: 1-13.
+\bibAnnoteFile{Phillips15}
+
+\bibitem{Zheng2011}
+Zheng G, Kolner C, Yang C (2011) Microscopy refocusing and dark-field imaging
+  by using a simple {LED} array.
+\newblock Optics {L}etters 36: 3987--3989.
+\bibAnnoteFile{Zheng2011}
+
+\bibitem{JMI:JMI1027}
+Barone-Nugent ED, Barty A, Nugent KA (2002) {Quantitative phase-amplitude
+  microscopy I: optical microscopy}.
+\newblock Journal of Microscopy 206: 194--203.
+\bibAnnoteFile{JMI:JMI1027}
+
+\bibitem{Claus2015}
+R~Claus AN P~Naulleau, Waller L (2015) Quantitative phase retrieval with
+  arbitrary pupil and illumination.
+\newblock Opt Express 23: 26672--26682.
+\bibAnnoteFile{Claus2015}
+
+\bibitem{HayesDSP}
+Hayes MH (1996) Statistical Digital Signal Processing and Modeling.
+\newblock Wiley.
+\bibAnnoteFile{HayesDSP}
+
+\bibitem{2002_l1_sparcity}
+Donoho DL, Elad M (2002) Optimally sparse representation in general
+  (nonorthogonal) dictionaries via $\ell^1$ minimization.
+\newblock PNAS 100: 2197--2202.
+\bibAnnoteFile{2002_l1_sparcity}
+
+\bibitem{JingsanSourceRecovery2016}
+Jingshan Z, Tian L, Varma P, Waller L (2016) Nonlinear optimization algorithm
+  for partially coherent phase retrieval and source recovery.
+\newblock IEEE Trans Comput Imaging .
+\bibAnnoteFile{JingsanSourceRecovery2016}
+
+\bibitem{standardphaseresolution2016}
+Horstmeyer R, Heintzmann R, Popescu G, Waller L, Yang C (2016) Standardizing
+  the resolution claims for coherent microscopy.
+\newblock Nature Photon .
+\bibAnnoteFile{standardphaseresolution2016}
+
+\bibitem{zernike1942phase}
+Zernike F (1942) Phase contrast, a new method for the microscopic observation
+  of transparent objects.
+\newblock Physica 9: 686--698.
+\bibAnnoteFile{zernike1942phase}
+
+\bibitem{nayarDeblur}
+Nayar SK, Ben-Ezra M (2004) Motion-based motion deblurring.
+\newblock IEEE Transactions on Pattern Analysis and Machine Intelligence 26:
+  689-698.
+\bibAnnoteFile{nayarDeblur}
+
+\bibitem{CaiDeblurring}
+Li F, Yu J, Chai J (2008) A hybrid camera for motion deblurring and depth map
+  super-resolution.
+\newblock In: 2008 IEEE Conference on Computer Vision and Pattern Recognition.
+  pp. 1-8.
+\newblock \doi{10.1109/CVPR.2008.4587574}.
+\bibAnnoteFile{CaiDeblurring}
+
+\bibitem{raskar2006coded}
+Raskar R, Agrawal A, Tumblin J (2006) Coded exposure photography: motion
+  deblurring using fluttered shutter.
+\newblock ACM Transactions on Graphics (TOG) 25: 795--804.
+\bibAnnoteFile{raskar2006coded}
+
+\bibitem{fergus2006removing}
+Fergus R, Singh B, Hertzmann A, Roweis ST, Freeman WT (2006) Removing camera
+  shake from a single photograph.
+\newblock In: ACM Transactions on Graphics (TOG). ACM, volume~25, pp. 787--794.
+\bibAnnoteFile{fergus2006removing}
+
+\bibitem{Shan:2008:HMD:1360612.1360672}
+Shan Q, Jia J, Agarwala A (2008) High-quality motion deblurring from a single
+  image.
+\newblock ACM Trans Graph 27: 73:1--73:10.
+\bibAnnoteFile{Shan:2008:HMD:1360612.1360672}
+
+\bibitem{Cho:2009:FMD:1618452.1618491}
+Cho S, Lee S (2009) Fast motion deblurring.
+\newblock ACM Trans Graph 28: 145:1--145:8.
+\bibAnnoteFile{Cho:2009:FMD:1618452.1618491}
+
+\bibitem{levin2006blind}
+Levin A (2006) Blind motion deblurring using image statistics.
+\newblock In: Advances in Neural Information Processing Systems. pp. 841--848.
+\bibAnnoteFile{levin2006blind}
+
+\bibitem{caiWavelet}
+Cai JF, Ji H, Liu C, Shen Z (2012) Framelet-based blind motion deblurring from
+  a single image.
+\newblock IEEE Transactions on Image Processing 21: 562-572.
+\bibAnnoteFile{caiWavelet}
+
+\bibitem{Zhu2011}
+Zhu H, Yaglidere O, Su TW, Tseng D, Ozcan A (2011) Cost-effective and compact
+  wide-field fluorescent imaging on a cell-phone.
+\newblock Lab on a Chip 11: 315-322.
+\bibAnnoteFile{Zhu2011}
+
+\bibitem{switz2014low}
+Switz NA, D'Ambrosio MV, Fletcher DA (2014) Low-cost mobile phone microscopy
+  with a reversed mobile phone camera lens.
+\newblock PLOS ONE 9: e95330.
+\bibAnnoteFile{switz2014low}
+
+\bibitem{smith2011cell}
+Smith ZJ, Chu K, Espenson AR, Rahimzadeh M, Gryshuk A, et~al. (2011)
+  Cell-phone-based platform for biomedical device development and education
+  applications.
+\newblock PLOS ONE 6: e17150.
+\bibAnnoteFile{smith2011cell}
+
+\bibitem{maamari2013mobile}
+Maamari RN, Keenan JD, Fletcher DA, Margolis TP (2013) A mobile phone-based
+  retinal camera for portable wide field imaging.
+\newblock British Journal of Ophthalmology 98: 438-441.
+\bibAnnoteFile{maamari2013mobile}
+
+\bibitem{C4LC00010B}
+Ozcan A (2014) Mobile phones democratize and cultivate next-generation
+  imaging{,} diagnostics and measurement tools.
+\newblock Lab on a Chip 14: 3187-3194.
+\bibAnnoteFile{C4LC00010B}
+
+\bibitem{Vashist2014}
+Vashist S, Mudanyali O, Schneider E, Zengerle R, Ozcan A (2014) Cellphone-based
+  devices for bioanalytical sciences.
+\newblock Analytical and Bioanalytical Chemistry 406: 3263-3277.
+\bibAnnoteFile{Vashist2014}
+
+\bibitem{steenblik2005lenses}
+Steenblik RA, Steenblik PH (2005).
+\newblock Lenses and uses, including microscopes.
+\newblock US Patent 6,847,480.
+\bibAnnoteFile{steenblik2005lenses}
+
+\bibitem{10.1371/journal.pone.0098781}
+Cybulski JS, Clements J, Prakash M (2014) Foldscope: Origami-based paper
+  microscope.
+\newblock PLOS ONE 9: e98781.
+\bibAnnoteFile{10.1371/journal.pone.0098781}
+
+\bibitem{boppart2014point}
+Boppart SA, Richards-Kortum R (2014) Point-of-care and point-of-procedure
+  optical imaging technologies for primary care and global health.
+\newblock Science Translational Medicine 6: 253rv2--253rv2.
+\bibAnnoteFile{boppart2014point}
+
+\bibitem{Greenbaum17122014}
+Greenbaum A, Zhang Y, Feizi A, Chung PL, Luo W, et~al. (2014) Wide-field
+  computational imaging of pathology slides using lens-free on-chip microscopy.
+\newblock Science Translational Medicine 6: 267ra175.
+\bibAnnoteFile{Greenbaum17122014}
+
+\bibitem{mudanyali2010compact}
+Mudanyali O, Tseng D, Oh C, Isikman SO, Sencan I, et~al. (2010) Compact,
+  light-weight and cost-effective microscope based on lensless incoherent
+  holography for telemedicine applications.
+\newblock Lab on a Chip 10: 1417--1428.
+\bibAnnoteFile{mudanyali2010compact}
+
+\bibitem{tseng2010lensfree}
+Tseng D, Mudanyali O, Oztoprak C, Isikman SO, Sencan I, et~al. (2010) Lensfree
+  microscopy on a cellphone.
+\newblock Lab on a Chip 10: 1787--1792.
+\bibAnnoteFile{tseng2010lensfree}
+
+\bibitem{10.1371/journal.pone.0006320}
+Breslauer DN, Maamari RN, Switz NA, Lam WA, Fletcher DA (2009) Mobile phone
+  based clinical microscopy for global health applications.
+\newblock PLOS ONE 4: e6320.
+\bibAnnoteFile{10.1371/journal.pone.0006320}
+
+\bibitem{10.1371/journal.pone.0096906}
+Skandarajah A, Reber CD, Switz NA, Fletcher DA (2014) Quantitative imaging with
+  a mobile phone microscope.
+\newblock PLOS ONE 9: e96906.
+\bibAnnoteFile{10.1371/journal.pone.0096906}
+
+\bibitem{oncescu2014cholesterol}
+Oncescu V, Mancuso M, Erickson D (2014) Cholesterol testing on a smartphone.
+\newblock Lab on a Chip 14: 759--763.
+\bibAnnoteFile{oncescu2014cholesterol}
+
+\bibitem{pamplona2010netra}
+Pamplona VF, Mohan A, Oliveira MM, Raskar R (2010) Netra: interactive display
+  for estimating refractive errors and focal range.
+\newblock ACM Transactions on Graphics (TOG) 29: 77.
+\bibAnnoteFile{pamplona2010netra}
+
+\bibitem{eyeexaminer}
+{Welch Allyn}.
+\newblock
+  \urlprefix\url{http://www.welchallyn.com/en/microsites/iexaminer.html}.
+\bibAnnoteFile{eyeexaminer}
+
+\bibitem{peekvision}
+{Peek Vision}.
+\newblock \urlprefix\url{http://www.peekvision.org/}.
+\bibAnnoteFile{peekvision}
+
+\bibitem{Ng2005}
+Ng R, Levoy M, Bredif M, Duval G, Horowitz M, et~al. (2005) Light field
+  photography with a hand-held plenoptic camera.
+\newblock Technical Report CTSR 2005-02, Stanford.
+\bibAnnoteFile{Ng2005}
+
+\bibitem{tian20153d}
+Tian L, Waller L (2015) {3D} intensity and phase imaging from light field
+  measurements in an {LED} array microscope.
+\newblock Optica 2: 104--111.
+\bibAnnoteFile{tian20153d}
+
+\bibitem{Dominguez:14}
+Dominguez D, Molina L, Desai DB, O'Loughlin T, Bernussi AA, et~al. (2014)
+  Hemispherical digital optical condensers with no lenses, mirrors, or moving
+  parts.
+\newblock Optics Express 22: 6948--6957.
+\bibAnnoteFile{Dominguez:14}
+
+\bibitem{brady2012multiscale}
+Brady D, Gehm M, Stack R, Marks D, Kittle D, et~al. (2012) Multiscale gigapixel
+  photography.
+\newblock Nature 486: 386--389.
+\bibAnnoteFile{brady2012multiscale}
+
+\bibitem{kachar1985asymmetric}
+Kachar B (1985) Asymmetric illumination contrast: a method of image formation
+  for video light microscopy.
+\newblock Science 227: 766--768.
+\bibAnnoteFile{kachar1985asymmetric}
+
+\bibitem{Dodt01101999}
+ (1999) Precisely localized ltd in the neocortex revealed by infrared-guided
+  laser stimulation.
+\newblock Science 286: 110-113.
+\bibAnnoteFile{Dodt01101999}
+
+\bibitem{ford2012phase}
+Ford TN, Chu KK, Mertz J (2012) Phase-gradient microscopy in thick tissue with
+  oblique back-illumination.
+\newblock Nature Methods 9: 1195--1197.
+\bibAnnoteFile{ford2012phase}
+
+\bibitem{Kak:1988fk}
+Kak AC, Slaney M (2001) Principle of Computerized Tomographic Imaging.
+\newblock Society for Industrial and Applied Mathematics.
+\bibAnnoteFile{Kak:1988fk}
+
+\bibitem{Dong:14}
+Dong S, Guo K, Nanda P, Shiradkar R, Zheng G (2014) Fpscope: a field-portable
+  high-resolution microscope using a cellphone lens.
+\newblock Biomed Opt Express 5: 3305--3310.
+\bibAnnoteFile{Dong:14}
+
+\bibitem{Tian2014}
+Tian L, Li X, Ramchandran K, Waller L (2014) Multiplexed coded illumination for
+  fourier ptychography with an led array microscope.
+\newblock Biomed Opt Express 5: 2376--2389.
+\bibAnnoteFile{Tian2014}
+
+\end{thebibliography}

@@ -1,0 +1,37 @@
+\contentsline {chapter}{Contents}{ii}{section*.1}
+\contentsline {chapter}{List of Figures}{iii}{section*.2}
+\contentsline {chapter}{\chapternumberline {1}Introduction}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}Optical Microscopy}{1}{section.1.1}
+\contentsline {subsection}{Imaging and Resolution}{1}{section*.3}
+\contentsline {subsection}{Fourier Optics Description}{3}{section*.4}
+\contentsline {section}{\numberline {1.2}Phase Imaging}{3}{section.1.2}
+\contentsline {section}{\numberline {1.3}Computational Imaging}{4}{section.1.3}
+\contentsline {chapter}{\chapternumberline {2}Single-Shot Quantitative Phase Retrieval}{6}{chapter.2}
+\contentsline {section}{\numberline {2.1}Quantitative Phase Imaging}{6}{section.2.1}
+\contentsline {section}{\numberline {2.2}Color-Multiplexed Differential Phase Contrast (cDPC) }{7}{section.2.2}
+\contentsline {subsection}{Hardware Design}{7}{section*.5}
+\contentsline {subsection}{Calibration}{8}{section*.6}
+\contentsline {subsection}{Forward model}{9}{section*.7}
+\contentsline {subsection}{Inverse problem}{10}{section*.8}
+\contentsline {section}{\numberline {2.3}Validation}{15}{section.2.3}
+\contentsline {subsection}{Temporal Resolution}{17}{section*.9}
+\contentsline {subsection}{Synthesized PhC and DIC Images}{17}{section*.10}
+\contentsline {subsection}{Stained and Dispersive Samples}{17}{section*.11}
+\contentsline {section}{\numberline {2.4}High-Throughput Imaging}{21}{section.2.4}
+\contentsline {section}{\numberline {2.5}Motion Deblur}{21}{section.2.5}
+\contentsline {section}{\numberline {2.6}Phase Imaging with Motion Deblur}{23}{section.2.6}
+\contentsline {section}{\numberline {2.7}Validation}{27}{section.2.7}
+\contentsline {subsection}{Simulation}{27}{section*.12}
+\contentsline {subsection}{Experimental Results}{27}{section*.13}
+\contentsline {chapter}{\chapternumberline {3}A Smartphone-Based Portable Computational Imaging System}{31}{chapter.3}
+\contentsline {section}{\numberline {3.1}Portable Microscopy}{31}{section.3.1}
+\contentsline {section}{\numberline {3.2}Computational CellScope}{31}{section.3.2}
+\contentsline {section}{\numberline {3.3}Domed LED Illumination}{33}{section.3.3}
+\contentsline {section}{\numberline {3.4}Multi-Contrast Imaging}{35}{section.3.4}
+\contentsline {section}{\numberline {3.5}Digital Refocusing}{37}{section.3.5}
+\contentsline {section}{\numberline {3.6}Hardware Implementation}{38}{section.3.6}
+\contentsline {subsection}{Acquisition Software and Processing}{41}{section*.14}
+\contentsline {chapter}{\chapternumberline {4}Conclusion}{43}{chapter.4}
+\contentsline {section}{\numberline {4.1}Proposed Future Work}{44}{section.4.1}
+\contentsline {section}{\numberline {4.2}Acknowledgements}{45}{section.4.2}
+\contentsline {chapter}{Bibliography}{46}{chapter*.15}

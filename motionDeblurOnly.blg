@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99d (TeX Live 2015)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: motionDeblurOnly.aux
+A level-1 auxiliary file: chap3.aux
+The style file: plos2009.bst
+Database file #1: refscited.bib
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+You've used 9 entries,
+            2441 wiz_defined-function locations,
+            612 strings with 6187 characters,
+and the built_in function-call counts, 7313 in all, are:
+= -- 673
+> -- 112
+< -- 4
++ -- 56
+- -- 28
+* -- 581
+:= -- 856
+add.period$ -- 22
+call.type$ -- 9
+change.case$ -- 15
+chr.to.int$ -- 0
+cite$ -- 18
+duplicate$ -- 710
+empty$ -- 759
+format.name$ -- 36
+if$ -- 1652
+int.to.chr$ -- 0
+int.to.str$ -- 9
+missing$ -- 97
+newline$ -- 61
+num.names$ -- 9
+pop$ -- 144
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 89
+stack$ -- 0
+substring$ -- 973
+swap$ -- 213
+text.length$ -- 4
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 0
+while$ -- 55
+width$ -- 10
+write$ -- 117
