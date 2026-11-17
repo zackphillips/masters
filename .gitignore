@@ -286,3 +286,10 @@ TSWLatexianTemp*
 # option is specified. Footnotes are the stored in a file with suffix Notes.bib.
 # Uncomment the next line to have this generated file ignored.
 #*Notes.bib
+
+.DS_Store
+
+# Built by CI and published as a release asset
+Phillips_mastersThesis.pdf
+motionDeblurOnly.pdf
+thesis.pdf
